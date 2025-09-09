@@ -154,7 +154,7 @@
     </div>
 
     <script>
-        // Создаем свечи
+
         function createCandles() {
             const candleCount = 15;
             const body = document.body;
@@ -163,15 +163,12 @@
                 const candle = document.createElement('div');
                 candle.className = 'candle';
                 
-                // Случайное положение по горизонтали
                 const left = Math.random() * 100;
                 candle.style.left = `${left}vw`;
                 
-                // Случайная высота свечи
                 const height = 60 + Math.random() * 40;
                 candle.style.height = `${height}px`;
                 
-                // Случайная задержка анимации
                 const delay = Math.random() * 2;
                 candle.querySelectorAll('.flame, .glow').forEach(el => {
                     el.style.animationDelay = `-${delay}s`;
@@ -187,16 +184,13 @@
             }
         }
         
-        // Создаем свечи при загрузке страницы
+
         window.addEventListener('load', createCandles);
         
-        // Сохраняем текст в локальное хранилище
         const textArea = document.querySelector('.text-area');
         
-        // Загружаем сохраненный текст, если есть
         textArea.value = localStorage.getItem('candleText') || '';
         
-        // Сохраняем текст при каждом изменении
         textArea.addEventListener('input', () => {
             localStorage.setItem('candleText', textArea.value);
         });
@@ -204,3 +198,4 @@
 </body>
 
 </html>
+
